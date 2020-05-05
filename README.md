@@ -51,6 +51,14 @@ const toggler: Scenario<State, ToggleAction> = ({ source, state }) => {
 };
 ```
 
+Other part - `DispatchProvider`. This react component provides `dispatch` and `getState` function. Under hood it optimize useState to prevent double subscription and memory leak.
+
+```tsx
+<DispatchProvider actions={[toggler]} initialState={() => ({ value: false })}>
+  {(dispatch, getState) => {}}
+</DispatchProvider>
+```
+
 # Install & run
 
 ```
