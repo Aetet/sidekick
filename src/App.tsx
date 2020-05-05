@@ -12,10 +12,11 @@ interface ToggleAction {
   value: boolean;
 }
 
-const toggler: Scenario<State, ToggleAction> = ({ source }) => {
-  return tap(({ action, setState }) => {
+const toggler: Scenario<State, ToggleAction> = ({ source, state }) => {
+  return tap(({ action }) => {
     const newValue = action.value;
-    setState({ value: newValue });
+    // Should not be destructed, otherwise magic won't works
+    state.setState({ value: newValue });
   }, source);
 };
 
@@ -27,7 +28,6 @@ function App() {
     >
       {(dispatch, getState) => {
         const handleToggle = (value: boolean) => {
-          console.log("value: before", value);
           dispatch({ value: !value });
         };
 
