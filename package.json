@@ -16,7 +16,7 @@
     "@types/react-dom": "^16.9.0",
     "fp-ts": "^2.5.3",
     "fx-ts": "^1.4.0",
-    "immer": "^6.0.3",
+    "immer": "^8.0.1",
     "most-subject": "^6.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
